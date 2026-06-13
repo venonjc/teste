@@ -3,15 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rádio Buteco Premium</title>
+<title>Buteco Premium TV</title>
 
 <style>
-body{
+*{
     margin:0;
-    padding:20px;
-    background:#111;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0d0d0d;
     font-family:Arial, sans-serif;
     color:#fff;
+}
+
+.header{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    border-bottom:2px solid #FFD700;
+}
+
+.header h1{
+    color:#FFD700;
+    font-size:36px;
 }
 
 .container{
@@ -19,6 +35,7 @@ body{
     justify-content:center;
     align-items:flex-start;
     gap:20px;
+    padding:20px;
     flex-wrap:wrap;
 }
 
@@ -27,34 +44,45 @@ body{
     background:#1a1a1a;
     padding:10px;
     border-radius:10px;
-    box-shadow:0 0 15px rgba(255,255,255,0.1);
+    box-shadow:0 0 15px rgba(255,215,0,.2);
 }
 
-.player-box iframe{
-    border:none;
-}
-
-h1{
+.footer{
     text-align:center;
-    color:#FFD700;
-    margin-bottom:20px;
+    padding:15px;
+    margin-top:20px;
+    background:#111;
+    color:#999;
+}
+
+@media(max-width:1360px){
+    .container{
+        flex-direction:column;
+        align-items:center;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<h1>🎵 Rádio Buteco Premium 🎵</h1>
+<div class="header">
+    <h1>🎵 BUTECO PREMIUM 🎵</h1>
+</div>
 
 <div class="container">
 
     <!-- PLAYER -->
     <div class="player-box">
-        <!-- COLE AQUI O CÓDIGO DO SEU PLAYER -->
         <iframe
-            src="SEU_PLAYER_AQUI"
-            width="630"
-            height="450">
+            name="Player"
+            src="//redecanaistv.rodeo/player3/ch.php?canal=cazetv1"
+            frameborder="0"
+            width="640"
+            height="400"
+            scrolling="no"
+            allow="encrypted-media"
+            allowfullscreen>
         </iframe>
     </div>
 
@@ -70,6 +98,10 @@ h1{
         </iframe>
     </div>
 
+</div>
+
+<div class="footer">
+    © 2026 Buteco Premium - Rumo ao Hexa 🇧🇷
 </div>
 
 </body>
