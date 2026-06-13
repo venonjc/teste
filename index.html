@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rádio Buteco Premium</title>
+
+<style>
+body{
+    margin:0;
+    padding:20px;
+    background:#111;
+    font-family:Arial, sans-serif;
+    color:#fff;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.player-box,
+.chat-box{
+    background:#1a1a1a;
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(255,255,255,0.1);
+}
+
+.player-box iframe{
+    border:none;
+}
+
+h1{
+    text-align:center;
+    color:#FFD700;
+    margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎵 Rádio Buteco Premium 🎵</h1>
+
+<div class="container">
+
+    <!-- PLAYER -->
+    <div class="player-box">
+        <!-- COLE AQUI O CÓDIGO DO SEU PLAYER -->
+        <iframe
+            src="SEU_PLAYER_AQUI"
+            width="630"
+            height="450">
+        </iframe>
+    </div>
+
+    <!-- CHAT XAT -->
+    <div class="chat-box">
+        <iframe
+            src="https://xat.com/embed/chat.php#id=220535412&gn=Butecopremium"
+            allow="clipboard-write"
+            width="650"
+            height="486"
+            frameborder="0"
+            scrolling="no">
+        </iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
