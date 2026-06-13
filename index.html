@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,7 +25,7 @@ body{
     color:#fff;
 }
 
-/* Barra da Rádio */
+/* Barra Rádio */
 .top-player{
     width:100%;
     background:#000;
@@ -47,7 +48,7 @@ body{
 
 .header h2{
     margin-top:10px;
-    color:#00ff66;
+    color:#00FF66;
     font-size:24px;
 }
 
@@ -77,6 +78,11 @@ body{
     margin-bottom:10px;
 }
 
+video{
+    background:#000;
+    border-radius:10px;
+}
+
 /* Rodapé */
 .footer{
     margin-top:20px;
@@ -91,19 +97,23 @@ body{
     margin-bottom:10px;
 }
 
+.footer p{
+    margin:5px 0;
+}
+
 /* Responsivo */
 @media(max-width:1360px){
 
-    .container{
-        flex-direction:column;
-        align-items:center;
-    }
+.container{
+    flex-direction:column;
+    align-items:center;
+}
 
-    .player iframe,
-    .chat iframe{
-        width:100%;
-        max-width:650px;
-    }
+video,
+.chat iframe{
+    width:100%;
+    max-width:650px;
+}
 
 }
 </style>
@@ -124,35 +134,36 @@ body{
 <!-- CABEÇALHO -->
 <div class="header">
     <h1>🇧🇷 BUTECO PREMIUM 🇧🇷</h1>
-    <h2> COPA DO MUNDO 2026 • RUMO AO HEXA </h2>
+    <h2>⚽ COPA DO MUNDO 2026 • RUMO AO HEXA ⚽</h2>
 </div>
 
 <!-- CONTEÚDO -->
 <div class="container">
 
-    <!-- PLAYER TV BUTECO -->
-    <div class="box player">
+    <!-- PLAYER TV GUAJARÁ -->
+    <div class="box">
 
         <div class="titulo">
-            📺 TV BUTECO
+            📺 TV GUAJARÁ AO VIVO
         </div>
 
-        <iframe
-            src="https://www.vidks.net/player/vid/tv-guajara.ks"
+        <video
+            id="tvguajara"
+            controls
+            autoplay
+            muted
+            playsinline
             width="640"
-            height="400"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-        </iframe>
+            height="400">
+        </video>
 
     </div>
 
-    <!-- CHAT XAT -->
+    <!-- CHAT -->
     <div class="box chat">
 
         <div class="titulo">
-             CHAT BUTECO PREMIUM
+            💬 CHAT BUTECO PREMIUM
         </div>
 
         <iframe
@@ -170,11 +181,40 @@ body{
 
 <!-- RODAPÉ -->
 <div class="footer">
-    <h3> Rádio Buteco Premium </h3>
+    <h3>🎵 Rádio Buteco Premium 🎵</h3>
     <p>24 Horas no Ar • Música • Futebol • Entretenimento</p>
     <p>🇧🇷 Copa do Mundo 2026 • Rumo ao Hexa 🇧🇷</p>
-    <p> www.butecopremium.com.br</p>
+    <p>🌐 www.butecopremium.com.br</p>
 </div>
+
+<!-- PLAYER HLS -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+
+const video = document.getElementById('tvguajara');
+
+const stream =
+'https://video05.logicahost.com.br/tvguajara/tvguajara/playlist.m3u8';
+
+if(Hls.isSupported()){
+
+    const hls = new Hls({
+        enableWorker:true,
+        lowLatencyMode:true
+    });
+
+    hls.loadSource(stream);
+    hls.attachMedia(video);
+
+}else if(video.canPlayType('application/vnd.apple.mpegurl')){
+
+    video.src = stream;
+
+}
+
+</script>
 
 </body>
 </html>
+```
