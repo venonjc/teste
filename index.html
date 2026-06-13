@@ -3,164 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buteco Premium - Rumo ao Hexa</title>
+<title>🇧🇷 Buteco Premium - Rumo ao Hexa</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-url('https://images.unsplash.com/photo-1517466787929-bc90951d0974');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('https://images.unsplash.com/photo-1517466787929-bc90951d0974');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:#fff;
 }
 
+/* Barra Rádio */
 .top-player{
-width:100%;
-background:#000;
-border-bottom:2px solid #FFD700;
+    width:100%;
+    background:#000;
+    border-bottom:2px solid #FFD700;
 }
 
+/* Cabeçalho */
 .header{
-text-align:center;
-padding:25px;
-background:rgba(0,0,0,.8);
+    text-align:center;
+    padding:25px;
+    background:rgba(0,0,0,.85);
+    border-bottom:3px solid #FFD700;
 }
 
 .header h1{
-font-size:55px;
-color:#FFD700;
-text-shadow:0 0 20px #FFD700;
+    color:#FFD700;
+    font-size:55px;
+    text-shadow:0 0 20px #FFD700;
 }
 
 .header h2{
-color:#00ff66;
-margin-top:10px;
+    margin-top:10px;
+    color:#00FF66;
+    font-size:24px;
 }
 
+/* Conteúdo */
 .container{
-display:flex;
-justify-content:center;
-align-items:flex-start;
-gap:20px;
-padding:20px;
-flex-wrap:wrap;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:20px;
+    padding:20px;
+    flex-wrap:wrap;
 }
 
 .box{
-background:rgba(0,0,0,.85);
-border:2px solid #FFD700;
-border-radius:15px;
-padding:10px;
-box-shadow:0 0 25px rgba(255,215,0,.4);
+    background:rgba(0,0,0,.85);
+    border:2px solid #FFD700;
+    border-radius:15px;
+    padding:10px;
+    box-shadow:0 0 20px rgba(255,215,0,.4);
 }
 
 .titulo{
-text-align:center;
-font-size:20px;
-font-weight:bold;
-color:#FFD700;
-margin-bottom:10px;
+    text-align:center;
+    color:#FFD700;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
+/* Rodapé */
 .footer{
-margin-top:20px;
-padding:20px;
-background:rgba(0,0,0,.85);
-text-align:center;
-border-top:2px solid #FFD700;
+    margin-top:20px;
+    padding:20px;
+    text-align:center;
+    background:rgba(0,0,0,.85);
+    border-top:2px solid #FFD700;
 }
 
 .footer h3{
-color:#FFD700;
+    color:#FFD700;
+    margin-bottom:10px;
 }
 
+.footer p{
+    margin:5px 0;
+}
+
+/* Responsivo */
 @media(max-width:1360px){
 
 .container{
-flex-direction:column;
-align-items:center;
+    flex-direction:column;
+    align-items:center;
+}
+
+.player iframe,
+.chat iframe{
+    width:100%;
+    max-width:650px;
 }
 
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- BARRA DA RADIO -->
-
+<!-- PLAYER DA RÁDIO -->
 <div class="top-player">
-<iframe
-src="https://player.igng.com.br/player-barra/7018/000000"
-frameborder="0"
-width="100%"
-height="31">
-</iframe>
+    <iframe
+        src="https://player.igng.com.br/player-barra/7018/000000"
+        frameborder="0"
+        width="100%"
+        height="31">
+    </iframe>
 </div>
 
 <!-- TOPO -->
-
 <div class="header">
-<h1>🇧🇷 BUTECO PREMIUM 🇧🇷</h1>
-<h2> RUMO AO HEXA </h2>
+    <h1>🇧🇷 BUTECO PREMIUM 🇧🇷</h1>
+    <h2>⚽ COPA DO MUNDO 2026 • RUMO AO HEXA ⚽</h2>
 </div>
 
-<!-- CONTEUDO -->
-
+<!-- CONTEÚDO -->
 <div class="container">
 
-<div class="box">
+    <!-- PLAYER YOUTUBE -->
+    <div class="box player">
 
-<div class="titulo">
-📺 TRANSMISSÃO AO VIVO
+        <div class="titulo">
+            📺 TRANSMISSÃO AO VIVO
+        </div>
+
+        <iframe
+            width="640"
+            height="400"
+            src="https://www.youtube.com/embed/LLpNUqHVam8?autoplay=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <!-- CHAT -->
+    <div class="box chat">
+
+        <div class="titulo">
+             CHAT BUTECO PREMIUM
+        </div>
+
+        <iframe
+            src="https://xat.com/embed/chat.php#id=220535412&gn=Butecopremium"
+            allow="clipboard-write"
+            width="650"
+            height="486"
+            frameborder="0"
+            scrolling="no">
+        </iframe>
+
+    </div>
+
 </div>
 
-<!-- PLAYER -->
-
-<iframe
-src="https://tv.sbt.com.br/"
-width="640"
-height="400"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="box">
-
-<div class="titulo">
-CHAT BUTECO PREMIUM
-</div>
-
-<iframe
-src="https://xat.com/embed/chat.php#id=220535412&gn=Butecopremium"
-allow="clipboard-write"
-width="650"
-height="486"
-frameborder="0"
-scrolling="no">
-</iframe>
-
-</div>
-
-</div>
-
+<!-- RODAPÉ -->
 <div class="footer">
-<h3> Rádio Buteco Premium </h3>
-<p>24 Horas no Ar • Música • Futebol • Entretenimento</p>
-<p>🇧🇷 Copa do Mundo 2026 • Rumo ao Hexa 🇧🇷</p>
-<p>www.butecopremium.com.br</p>
+    <h3> Rádio Buteco Premium </h3>
+    <p>Música • Futebol • Entretenimento • 24 Horas no Ar</p>
+    <p>🇧🇷 Copa do Mundo 2026 • Rumo ao Hexa 🇧🇷</p>
+    <p>🌐 www.butecopremium.com.br</p>
 </div>
 
 </body>
